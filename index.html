@@ -5,229 +5,451 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Cirurgia de siso em Brasília · Dr. Assis Russo</title>
-<meta name="description" content="Dr. Assis Russo, cirurgião-dentista em Brasília. Cirurgia de siso, inclusive os casos complexos, cirurgia oral menor e clínica geral. Agende sua avaliação pelo WhatsApp.">
+<meta name="description" content="Dr. Assis Russo, cirurgião-dentista em Brasília. Cirurgia de siso, inclusive os casos complexos, extrações, urgência e clínica geral. Atendimento particular. Agende sua avaliação pelo WhatsApp.">
+<meta property="og:title" content="Cirurgia de siso em Brasília · Dr. Assis Russo">
+<meta property="og:description" content="Cirurgia de siso, extrações, urgência e clínica geral. Agende pelo WhatsApp.">
+<meta property="og:image" content="img/centro-cirurgico-1131-m.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Russo Centro Odontológico","url":"https://russocentroodontologico.com.br","founder":"Dr. Assis Russo","telephone":"+55 61 3199-2265","areaServed":"Brasília, DF","address":{"@type":"PostalAddress","addressLocality":"Brasília","addressRegion":"DF","addressCountry":"BR"},"sameAs":["https://www.instagram.com/cirurgia.odonto/","https://www.facebook.com/profile.php?id=61595890775844"]}
 </script>
 <style>
 :root{
   --esmalte:#f5f6f3;
+  --papel:#ffffff;
   --tinta:#172238;
+  --tinta-2:#22304d;
   --aco:#566174;
-  --linha:#d9dce1;
+  --linha:#dfe2e7;
   --gengiva:#e3aeb0;
   --gengiva-forte:#a8505c;
-  --branco:#ffffff;
+  --verde-wa:#1f9d55;
+  --sombra:0 1px 2px rgba(23,34,56,.06),0 8px 24px rgba(23,34,56,.06);
+  --sombra-alta:0 2px 4px rgba(23,34,56,.08),0 18px 40px rgba(23,34,56,.14);
+  --raio:20px;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;background:var(--esmalte);color:var(--tinta);font-size:17px;line-height:1.6}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;background:var(--esmalte);color:var(--tinta);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible{outline:3px solid var(--gengiva-forte);outline-offset:3px;border-radius:6px}
 img{display:block;max-width:100%}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--gengiva-forte);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;letter-spacing:-.025em;line-height:1.1}
+h2{font-size:clamp(30px,4.4vw,44px);font-weight:700;max-width:20ch}
+.sub{color:var(--aco);max-width:56ch;margin-top:12px}
+section.bloco{padding:96px 0 0}
+.cabeca{margin-bottom:36px}
 
-.barra{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-.nome-marca{font-weight:650;font-size:16px;letter-spacing:-.01em;text-decoration:none}
-.nome-marca span{color:var(--aco);font-weight:400}
-.barra a.mini{font-size:15px;text-decoration:none;border-bottom:1.5px solid var(--gengiva-forte);padding-bottom:1px}
+/* topo fixo */
+.topo{position:sticky;top:0;z-index:40;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.topo .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.topo.rolou{background:rgba(245,246,243,.78);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 var(--linha)}
+.marca{display:flex;align-items:center;gap:10px;font-weight:650;font-size:16px;text-decoration:none;letter-spacing:-.01em}
+.marca i{width:30px;height:30px;border-radius:9px;background:var(--tinta);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px;font-weight:700}
+.marca span{color:var(--aco);font-weight:400}
+.topo nav{display:none;gap:28px;font-size:15px}
+.topo nav a{text-decoration:none;color:var(--aco);transition:color .2s}
+.topo nav a:hover{color:var(--tinta)}
+.agendar{font-size:15px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:999px;background:var(--tinta);color:#fff;transition:transform .2s var(--ease),background .2s}
+.agendar:hover{background:var(--tinta-2);transform:translateY(-1px)}
+@media(min-width:900px){.topo nav{display:flex}}
+
+/* botões */
+.botao{position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--tinta);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:17px 28px;border-radius:999px;overflow:hidden;isolation:isolate;transition:transform .25s var(--ease),box-shadow .25s}
+.botao::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.18) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease);z-index:-1}
+.botao:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(23,34,56,.25)}
+.botao:hover::after{transform:translateX(120%)}
+.botao svg{width:20px;height:20px;flex:none}
+.botao .seta{transition:transform .25s var(--ease)}
+.botao:hover .seta{transform:translateX(4px)}
+.botao.claro{background:var(--gengiva);color:var(--tinta)}
 
 /* hero */
-.hero{padding:40px 0 0;display:grid;gap:36px}
-.hero h1{font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;font-size:clamp(42px,8vw,82px);line-height:1;letter-spacing:-.035em;font-weight:700;max-width:12ch}
-.hero p.apoio{font-size:clamp(17px,2.1vw,20px);color:var(--aco);max-width:44ch;margin:22px 0 30px}
-.botao{display:inline-flex;align-items:center;gap:10px;background:var(--tinta);color:var(--branco);text-decoration:none;font-weight:600;font-size:17px;padding:16px 26px;border-radius:999px;transition:background .2s}
-.botao:hover{background:#24324f}
-.botao svg{width:20px;height:20px}
-.hero figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:40% 45%;border-radius:18px}
-.hero figcaption{font-size:13px;color:var(--aco);margin-top:8px}
-@media(min-width:900px){.hero{grid-template-columns:1.1fr 1fr;align-items:center;padding-top:56px}.hero figure img{aspect-ratio:4/5}}
+.hero{display:grid;gap:40px;padding:28px 0 0}
+.hero h1{font-size:clamp(44px,8vw,88px);font-weight:700;letter-spacing:-.04em;line-height:.98;max-width:11ch}
+.hero .apoio{font-size:clamp(17px,2vw,20px);color:var(--aco);max-width:44ch;margin:24px 0 32px}
+.selos{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.selo{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:6px 12px 6px 8px;border-radius:999px;background:var(--papel);border:1px solid var(--linha);color:var(--tinta)}
+.selo b{width:20px;height:20px;border-radius:50%;background:var(--esmalte);display:grid;place-items:center}
+.selo svg{width:12px;height:12px}
+.hero-foto{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--sombra-alta);aspect-ratio:4/3}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:40% 45%;transform-origin:60% 40%}
+.vidro{position:absolute;left:16px;right:16px;bottom:16px;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.72);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 24px rgba(23,34,56,.14)}
+.vidro .ini{width:44px;height:44px;border-radius:14px;background:var(--tinta);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.vidro strong{display:block;font-size:15.5px;line-height:1.25}
+.vidro span{font-size:13.5px;color:var(--aco);line-height:1.35;display:block}
+@media(min-width:960px){.hero{grid-template-columns:1.05fr 1fr;align-items:center;padding-top:48px}.hero-foto{aspect-ratio:4/5}.vidro{left:24px;right:auto;bottom:24px;max-width:330px}}
 
-/* arcada: os quatro sisos acesos */
-.arcada{margin:64px 0 0;padding:32px 0 8px;border-top:1px solid var(--linha);display:grid;gap:22px}
-.arcada h2{margin:0}
-.arcada .legenda{color:var(--aco);max-width:56ch}
-.boca{display:grid;gap:10px}
+/* entrada orquestrada da primeira dobra */
+.entra{opacity:0;transform:translateY(14px);animation:entra .8s var(--ease) forwards}
+.entra.d1{animation-delay:.08s}.entra.d2{animation-delay:.16s}.entra.d3{animation-delay:.24s}.entra.d4{animation-delay:.32s}
+@keyframes entra{to{opacity:1;transform:none}}
+.hero-foto img{animation:respira 1.8s var(--ease) both}
+@keyframes respira{from{transform:scale(1.1)}to{transform:scale(1)}}
+.vidro{animation:sobe .9s .6s var(--ease) both}
+@keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* faixa de confiança */
+.confianca{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linha);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden}
+.confianca > div{background:var(--papel);padding:20px 18px;display:flex;gap:12px;align-items:flex-start}
+.confianca svg{width:22px;height:22px;flex:none;color:var(--gengiva-forte);margin-top:2px}
+.confianca strong{display:block;font-size:15px;line-height:1.3}
+.confianca span{display:block;font-size:13.5px;color:var(--aco);line-height:1.4;margin-top:2px}
+@media(min-width:900px){.confianca{grid-template-columns:repeat(4,1fr)}}
+
+/* arcada interativa */
+.arcada{display:grid;gap:28px;background:var(--papel);border:1px solid var(--linha);border-radius:28px;padding:28px 20px;box-shadow:var(--sombra)}
+.arcada h2{font-size:clamp(28px,3.6vw,38px)}
+.painel{margin-top:18px;min-height:150px;border-radius:16px;background:var(--esmalte);padding:18px 20px;transition:background .3s}
+.painel .num{font-size:13px;font-weight:700;color:var(--gengiva-forte);letter-spacing:.02em}
+.painel h3{font-size:21px;margin:2px 0 6px}
+.painel p{font-size:15.5px;color:var(--aco)}
+.painel.siso{background:var(--tinta)}
+.painel.siso h3{color:#fff}.painel.siso p{color:#c3cad6}.painel.siso .num{color:var(--gengiva)}
+.painel a{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;color:var(--gengiva);text-decoration:none;border-bottom:1.5px solid currentColor}
+.boca{display:grid;gap:10px;align-content:center}
 .fileira{display:grid;grid-template-columns:repeat(16,1fr);gap:4px;font-variant-numeric:tabular-nums}
-.fileira span{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;font-size:clamp(10px,1.7vw,16px);font-weight:600;color:#8b93a1;background:var(--branco);border:1px solid var(--linha);border-radius:40% 40% 46% 46%/34% 34% 60% 60%}
-.fileira.inferior span{border-radius:46% 46% 40% 40%/60% 60% 34% 34%}
-.fileira span.meio{margin-right:6px}
-.fileira span.siso{background:var(--tinta);border-color:var(--tinta);color:var(--branco);animation:acende .9s ease-out both}
-.fileira span.siso:nth-of-type(16){animation-delay:.2s}
-.fileira.inferior span.siso{animation-delay:.4s}
-.fileira.inferior span.siso:nth-of-type(16){animation-delay:.6s}
-@keyframes acende{from{background:var(--branco);border-color:var(--linha);color:#8b93a1}}
-@media(min-width:900px){.arcada{grid-template-columns:1fr 1.5fr;align-items:center}}
-
-section.bloco{padding:72px 0;border-top:1px solid var(--linha)}
-h2{font-size:clamp(28px,4.4vw,40px);letter-spacing:-.025em;line-height:1.1;font-weight:700;max-width:20ch;margin-bottom:28px}
-.trat{display:grid;gap:6px;padding:24px 0;border-bottom:1px solid var(--linha)}
-.trat:first-of-type{border-top:1px solid var(--linha)}
-.trat h3{font-size:21px;letter-spacing:-.01em}
-.trat p{color:var(--aco);max-width:60ch}
-.trat.principal h3{font-size:25px}
-@media(min-width:760px){.trat{grid-template-columns:320px 1fr;gap:32px;align-items:baseline}}
-
-.sobre{display:grid;gap:32px}
-.sobre img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:62% 40%;border-radius:18px}
-
-.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;grid-auto-flow:dense}
-.galeria img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
-.galeria .larga,.galeria figure:last-child{grid-column:span 2}
-.galeria .larga img,.galeria figure:last-child img{aspect-ratio:3/2}
-.galeria-nota{font-size:14px;color:var(--aco);margin:-12px 0 24px;max-width:56ch}
-@media(min-width:860px){
-  .galeria{grid-template-columns:repeat(3,1fr);gap:10px}
-  .galeria img,.galeria figure:last-child img{aspect-ratio:4/3}
-  .galeria figure:last-child{grid-column:auto}
-  .galeria .larga img{aspect-ratio:auto}
-  .galeria .alta{grid-row:span 2}
-  .galeria .alta img{aspect-ratio:auto}
+.dente{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;font-size:clamp(9px,1.5vw,15px);font-weight:650;color:#8b93a1;background:var(--esmalte);border:1px solid var(--linha);border-radius:40% 40% 46% 46%/34% 34% 60% 60%;transition:transform .2s var(--ease),background .2s,color .2s,border-color .2s}
+.inferior .dente{border-radius:46% 46% 40% 40%/60% 60% 34% 34%}
+.dente.meio{margin-right:6px}
+.dente:hover{transform:translateY(-3px);border-color:var(--tinta);color:var(--tinta)}
+.inferior .dente:hover{transform:translateY(3px)}
+.dente.siso{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.dente.siso::after{content:"";position:absolute}
+.dente[aria-pressed="true"]{box-shadow:0 0 0 3px var(--gengiva)}
+.dica{font-size:13px;color:var(--aco);text-align:center;margin-top:6px}
+@media(max-width:599px){
+  .boca{gap:18px}
+  .fileira{grid-template-columns:repeat(8,1fr);gap:6px}
+  .dente{font-size:14px}
+  .dente.meio{margin-right:0}
 }
+@media(min-width:900px){.arcada{grid-template-columns:1fr 1.35fr;align-items:center;padding:44px}}
+
+/* cards de serviço */
+.cards{display:grid;gap:14px}
+.card{position:relative;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);padding:26px 24px 22px;box-shadow:var(--sombra);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;overflow:hidden;isolation:isolate}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(227,174,176,.28),transparent 45%)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra-alta);border-color:#cfd3da}
+.card:hover::before{opacity:1}
+.icone{width:48px;height:48px;border-radius:14px;background:var(--esmalte);display:grid;place-items:center;margin-bottom:18px;transition:transform .3s var(--ease),background .3s}
+.icone svg{width:24px;height:24px;color:var(--tinta)}
+.card:hover .icone{transform:rotate(-6deg) scale(1.06);background:var(--gengiva)}
+.card h3{font-size:21px;margin-bottom:6px}
+.card > p{color:var(--aco);font-size:15.5px}
+.abre{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--tinta)}
+.abre svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.abre[aria-expanded="true"] svg{transform:rotate(45deg)}
+.mais{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.mais > ul{overflow:hidden;list-style:none}
+.mais.aberto{grid-template-rows:1fr}
+.mais li{font-size:14.5px;color:var(--aco);padding:7px 0 7px 22px;position:relative;border-top:1px solid var(--linha)}
+.mais li:first-child{margin-top:14px}
+.mais li::before{content:"";position:absolute;left:4px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gengiva)}
+.card.destaque{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.card.destaque > p,.card.destaque .mais li{color:#c3cad6}
+.card.destaque .mais li{border-color:rgba(255,255,255,.12)}
+.card.destaque .icone{background:rgba(255,255,255,.1)}
+.card.destaque .icone svg,.card.destaque .abre{color:#fff}
+.card.destaque::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(227,174,176,.22),transparent 45%)}
+.etiqueta{position:absolute;top:22px;right:22px;font-size:12.5px;font-weight:650;padding:4px 10px;border-radius:999px;background:var(--gengiva);color:var(--tinta)}
+@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}.card.destaque{grid-column:span 2}}
+@media(min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}.card.destaque{grid-column:span 2;grid-row:span 2;padding:36px}.card.destaque h3{font-size:30px}.card.destaque > p{font-size:17px;max-width:46ch}}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;grid-auto-flow:dense}
+.galeria button{position:relative;display:block;width:100%;height:100%;border-radius:16px;overflow:hidden;cursor:zoom-in}
+.galeria img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;transition:transform .6s var(--ease),filter .4s}
+.galeria button::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,34,56,.45),transparent 50%);opacity:0;transition:opacity .4s}
+.galeria button:hover img{transform:scale(1.06)}
+.galeria button:hover::after{opacity:1}
+.galeria .larga,.galeria .ultima{grid-column:span 2}
+.galeria .larga img,.galeria .ultima img{aspect-ratio:3/2}
+@media(min-width:860px){.galeria{grid-template-columns:repeat(3,1fr);gap:12px}.galeria img,.galeria .ultima img{aspect-ratio:4/3}.galeria .ultima{grid-column:auto}.galeria .larga img,.galeria .alta img{aspect-ratio:auto}.galeria .alta{grid-row:span 2}}
+
+dialog.lupa{margin:auto;border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh;overflow:visible}
+dialog.lupa::backdrop{background:rgba(12,18,32,.88);backdrop-filter:blur(6px)}
+dialog.lupa img{max-width:100%;max-height:84vh;border-radius:14px;object-fit:contain;animation:zoom .35s var(--ease)}
+@keyframes zoom{from{opacity:0;transform:scale(.96)}}
+dialog.lupa p{color:#d7dce5;font-size:14px;text-align:center;margin-top:10px}
+.lupa-btn{position:fixed;top:50%;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;transform:translateY(-50%);transition:background .2s}
+.lupa-btn:hover{background:rgba(255,255,255,.26)}
+.lupa-btn svg{width:22px;height:22px}
+.lupa-ant{left:16px}.lupa-prox{right:16px}
+.lupa-fecha{position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center}
+
+/* sobre */
+.sobre{display:grid;gap:36px}
+.sobre-foto{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--sombra-alta)}
+.sobre-foto img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:62% 40%}
 .sobre p{max-width:58ch}
 .sobre p + p{margin-top:14px}
-.formacao{margin-top:24px;border-top:1px solid var(--linha)}
-.formacao div{padding:12px 0;border-bottom:1px solid var(--linha);display:grid;gap:2px}
-.formacao dt{font-size:14px;color:var(--aco)}
-@media(min-width:860px){.sobre{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.formacao{margin-top:28px;display:grid;gap:10px}
+.formacao div{display:flex;gap:14px;align-items:flex-start;background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:16px 18px;transition:transform .25s var(--ease),box-shadow .25s}
+.formacao div:hover{transform:translateX(4px);box-shadow:var(--sombra)}
+.formacao svg{width:22px;height:22px;flex:none;color:var(--gengiva-forte);margin-top:2px}
+.formacao dt{font-size:13px;color:var(--aco)}
+.formacao dd{font-weight:600;line-height:1.4}
+@media(min-width:900px){.sobre{grid-template-columns:.85fr 1.15fr;align-items:center}}
 
-ol.passos{list-style:none;display:grid;gap:24px;counter-reset:p}
-ol.passos li{counter-increment:p;padding-left:56px;position:relative;max-width:60ch}
-ol.passos li::before{content:counter(p);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--tinta);display:flex;align-items:center;justify-content:center;font-weight:650}
-ol.passos h3{font-size:19px;margin-bottom:2px}
-ol.passos p{color:var(--aco)}
-@media(min-width:860px){ol.passos{grid-template-columns:repeat(4,1fr)}ol.passos li{padding-left:0;padding-top:56px}}
+/* como funciona com linha de progresso */
+.passos{list-style:none;position:relative;display:grid;gap:30px;padding-left:58px;--p:0}
+.passos::before,.passos::after{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:2px;border-radius:2px}
+.passos::before{background:var(--linha)}
+.passos::after{background:var(--gengiva-forte);transform-origin:top;transform:scaleY(var(--p));transition:transform .15s linear}
+.passos li{position:relative}
+.passos .bola{position:absolute;left:-58px;top:-4px;width:40px;height:40px;border-radius:50%;background:var(--papel);border:2px solid var(--linha);display:grid;place-items:center;font-weight:700;font-size:15px;transition:background .35s,border-color .35s,color .35s;z-index:1}
+.passos li.feito .bola{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.passos h3{font-size:20px;margin-bottom:4px}
+.passos p{color:var(--aco);max-width:44ch}
+@media(min-width:900px){
+  .passos{grid-template-columns:repeat(4,1fr);padding-left:0;padding-top:64px;gap:28px}
+  .passos::before,.passos::after{left:20px;right:calc((100% - 84px) / 4 - 20px);top:19px;bottom:auto;width:auto;height:2px}
+  .passos::after{transform-origin:left;transform:scaleX(var(--p))}
+  .passos .bola{left:0;top:-64px}
+}
 
-.duvidas details{border-bottom:1px solid var(--linha);padding:18px 0}
-.duvidas details:first-of-type{border-top:1px solid var(--linha)}
-.duvidas summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.duvidas summary::after{content:"+";font-weight:400;font-size:24px;line-height:1;color:var(--aco)}
-.duvidas details[open] summary::after{content:"−"}
-.duvidas details p{color:var(--aco);margin-top:10px;max-width:62ch}
+/* dúvidas */
+.duvidas{max-width:820px}
+.pergunta{border-bottom:1px solid var(--linha)}
+.pergunta:first-of-type{border-top:1px solid var(--linha)}
+.pergunta button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;text-align:left;font-weight:600;font-size:18px}
+.pergunta .mais-menos{width:32px;height:32px;border-radius:50%;background:var(--papel);border:1px solid var(--linha);display:grid;place-items:center;flex:none;transition:transform .3s var(--ease),background .3s}
+.pergunta .mais-menos svg{width:14px;height:14px}
+.pergunta button[aria-expanded="true"] .mais-menos{transform:rotate(45deg);background:var(--gengiva);border-color:var(--gengiva)}
+.pergunta .resposta{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.pergunta .resposta > p{overflow:hidden;color:var(--aco);max-width:62ch}
+.pergunta .resposta.aberta{grid-template-rows:1fr}
+.pergunta .resposta.aberta > p{padding-bottom:22px}
 
-.contato{background:var(--tinta);color:var(--branco);padding:72px 0}
-.contato h2{color:var(--branco)}
-.contato p{color:#c3cad6;max-width:52ch;margin-bottom:28px}
-.contato .botao{background:var(--gengiva);color:var(--tinta)}
-.contato .botao:hover{background:#ecc1c2}
-.contato dl{display:grid;gap:14px;margin-top:40px;font-size:15px}
-.contato dt{color:#8f99ab}
-@media(min-width:760px){.contato dl{grid-template-columns:repeat(3,1fr)}}
+/* contato */
+.contato{margin-top:110px;background:var(--tinta);color:#fff;position:relative;overflow:hidden}
+.contato::before{content:"";position:absolute;width:620px;height:620px;right:-180px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(227,174,176,.22),transparent 65%)}
+.contato .wrap{position:relative;padding-top:88px;padding-bottom:88px;display:grid;gap:40px}
+.contato h2{color:#fff;font-size:clamp(34px,5vw,56px)}
+.contato p{color:#c3cad6;max-width:48ch;margin:16px 0 30px}
+.contato dl{display:grid;gap:10px;align-content:start}
+.contato dl div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 18px;transition:background .25s}
+.contato dl div:hover{background:rgba(255,255,255,.1)}
+.contato dt{font-size:13px;color:#8f99ab}
+.contato dd{font-weight:600}
+.contato dd a{text-decoration:none}
+@media(min-width:900px){.contato .wrap{grid-template-columns:1.3fr 1fr;align-items:center}}
 
-footer{padding:28px 0 96px;font-size:13px;color:var(--aco)}
+footer{padding:28px 0 110px;font-size:13px;color:var(--aco)}
 footer p + p{margin-top:8px}
-.flutua{position:fixed;right:16px;bottom:16px;width:58px;height:58px;border-radius:50%;background:#1f9d55;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(23,34,56,.25)}
-.flutua svg{width:28px;height:28px;fill:#fff}
+
+/* whatsapp flutuante */
+.flutua{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:10px}
+.flutua a.wa{width:60px;height:60px;border-radius:50%;background:var(--verde-wa);display:grid;place-items:center;box-shadow:0 10px 24px rgba(31,157,85,.35);transition:transform .25s var(--ease)}
+.flutua a.wa:hover{transform:scale(1.07)}
+.flutua a.wa svg{width:30px;height:30px;fill:#fff}
+.flutua a.wa::before{content:"";position:absolute;right:0;bottom:0;width:60px;height:60px;border-radius:50%;border:2px solid var(--verde-wa);animation:pulso 2.4s 1.5s var(--ease) 2;opacity:0}
+@keyframes pulso{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
+.balao{background:var(--papel);border-radius:16px 16px 4px 16px;padding:12px 34px 12px 14px;box-shadow:var(--sombra-alta);font-size:14px;line-height:1.35;max-width:220px;position:relative;opacity:0;transform:translateY(8px) scale(.96);pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.balao.mostra{opacity:1;transform:none;pointer-events:auto}
+.balao strong{display:block}
+.balao button{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:var(--aco)}
+.balao button:hover{background:var(--esmalte)}
+
+/* revelação suave dos blocos (uma vez) */
+.revela{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.revela.visto{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .entra,.revela{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="barra">
-    <a class="nome-marca" href="#">Russo <span>Centro Odontológico</span></a>
-    <a class="mini" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">Agendar avaliação</a>
-  </header>
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="#"><i>R</i>Russo <span>Centro Odontológico</span></a>
+    <nav aria-label="Seções">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#centro-cirurgico">Centro cirúrgico</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="agendar" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o.">Agendar</a>
+  </div>
+</header>
 
-  <main>
+<main>
+  <div class="wrap">
     <section class="hero">
       <div>
-        <h1>Cirurgia de siso em Brasília.</h1>
-        <p class="apoio">Sou o Dr. Assis Russo, cirurgião-dentista com residência em cirurgia bucomaxilofacial. Tiro sisos simples e os casos complexos, com o planejamento explicado antes e o acompanhamento depois.</p>
-        <a class="botao" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
-          Avaliar meus sisos no WhatsApp
-        </a>
+        <div class="selos entra">
+          <span class="selo"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b>Residência em bucomaxilofacial</span>
+          <span class="selo"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b>Atendimento particular</span>
+        </div>
+        <h1 class="entra d1">Cirurgia de siso em Brasília.</h1>
+        <p class="apoio entra d2">Sou o Dr. Assis Russo, cirurgião-dentista com residência em cirurgia bucomaxilofacial. Tiro sisos simples e os casos complexos, com o planejamento explicado antes e o acompanhamento depois.</p>
+        <div class="entra d3">
+          <a class="botao" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Avaliar meus sisos
+            <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
-      <figure>
-        <img src="img/centro-cirurgico-1131-m.jpg" srcset="img/centro-cirurgico-1131-m.jpg 1000w, img/centro-cirurgico-1131.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Cirurgião em procedimento no centro cirúrgico" width="2000" height="1333">
+      <figure class="hero-foto entra d2">
+        <img src="img/centro-cirurgico-1131-m.jpg" srcset="img/centro-cirurgico-1131-m.jpg 1000w, img/centro-cirurgico-1131.jpg 2000w" sizes="(min-width: 960px) 50vw, 100vw" alt="Cirurgião em procedimento no centro cirúrgico" width="2000" height="1333">
+        <figcaption class="vidro">
+          <span class="ini" aria-hidden="true">AR</span>
+          <span><strong>Dr. Assis Russo</strong><span>Cirurgião-dentista · Cirurgia de siso e clínica geral</span></span>
+        </figcaption>
       </figure>
     </section>
 
-    <div class="arcada">
-      <div>
-        <h2>Os quatro do fundo.</h2>
-        <p class="legenda">Os sisos são os dentes 18, 28, 38 e 48 do prontuário. Quando nascem tortos, presos no osso ou sem espaço, causam dor, inflamação e empurram os outros dentes. Na avaliação a radiografia mostra qual é o seu caso.</p>
-      </div>
-      <div class="boca" role="img" aria-label="Arcada dentária numerada com os quatro sisos, dentes 18, 28, 38 e 48, em destaque">
-        <div class="fileira" aria-hidden="true">
-          <span class="siso">18</span><span>17</span><span>16</span><span>15</span><span>14</span><span>13</span><span>12</span><span class="meio">11</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span class="siso">28</span>
-        </div>
-        <div class="fileira inferior" aria-hidden="true">
-          <span class="siso">48</span><span>47</span><span>46</span><span>45</span><span>44</span><span>43</span><span>42</span><span class="meio">41</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span class="siso">38</span>
-        </div>
-      </div>
+    <div class="confianca revela">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h6"/></svg><div><strong>Plano antes de começar</strong><span>Radiografia, valor e orientações</span></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div><strong>Urgência</strong><span>Dor ou inchaço? Chame no WhatsApp</span></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg><div><strong>Retorno</strong><span>Para acompanhar a cicatrização</span></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Atendimento particular</strong><span>Sem fila de convênio</span></div></div>
     </div>
 
+    <section class="bloco" id="arcada">
+      <div class="arcada revela">
+        <div>
+          <h2>Os quatro do fundo.</h2>
+          <p class="sub">Cada dente tem um número no prontuário. Os sisos são o 18, o 28, o 38 e o 48. Toque em qualquer dente para ver qual é.</p>
+          <div class="painel siso" id="painel" aria-live="polite">
+            <span class="num">Dente 18</span>
+            <h3>Siso superior direito</h3>
+            <p>Quando nasce torto, preso no osso ou sem espaço, causa dor, inflamação e empurra os vizinhos. A radiografia mostra se precisa sair.</p>
+            <a href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">Avaliar meus sisos</a>
+          </div>
+        </div>
+        <div>
+          <div class="boca" id="boca"></div>
+          <p class="dica">Arcada vista de frente: em cima, os dentes de cima; embaixo, os de baixo.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="bloco" id="tratamentos">
-      <h2>O que eu faço</h2>
-      <div class="trat principal"><h3>Cirurgia de siso</h3><p>Do siso que já nasceu ao incluso, preso no osso ou próximo do nervo. Cada caso é planejado com radiografia antes da cirurgia, e a remoção dos pontos é feita no retorno.</p></div>
-      <div class="trat"><h3>Extrações e pequenas cirurgias</h3><p>Extração simples, extração de dente de leite, frenectomia (o "freio" da língua ou do lábio) e drenagem de abscesso.</p></div>
-      <div class="trat"><h3>Urgência</h3><p>Dor forte, inchaço ou dente quebrado: chame no WhatsApp e conte o que está sentindo.</p></div>
-      <div class="trat"><h3>Restaurações e sensibilidade</h3><p>Restauração em resina na cor do dente, restauração provisória e tratamento para dente sensível ao gelado e ao doce.</p></div>
-      <div class="trat"><h3>Limpeza e prevenção</h3><p>Consulta de avaliação, limpeza, flúor em gel ou verniz e selante nos dentes de trás, de crianças e adultos.</p></div>
-      <div class="trat"><h3>Gengiva</h3><p>Raspagem e alisamento das raízes para gengiva que sangra ou inflama, e manutenção periódica depois do tratamento.</p></div>
+      <div class="cabeca revela">
+        <h2>O que eu faço</h2>
+        <p class="sub">A cirurgia é o foco, mas o consultório cuida da boca inteira: da urgência à prevenção.</p>
+      </div>
+      <div class="cards">
+        <article class="card destaque revela">
+          <span class="etiqueta">Foco do consultório</span>
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.1 4 1.7 6.4.5 2.3.8 7.2 2.6 7.2 1.6 0 1.6-4.6 2.7-5.8.4-.4.8-.4 1.2 0 1.1 1.2 1.1 5.8 2.7 5.8 1.8 0 2.1-4.9 2.6-7.2.6-2.4 1.7-3.8 1.7-6.4C21 4.8 19.2 3 17 3c-1.8 0-2.8 1-5 1S8.8 3 7 3Z"/></svg></div>
+          <h3>Cirurgia de siso</h3>
+          <p>Do siso que já nasceu ao incluso, preso no osso ou próximo do nervo. Cada caso é planejado com radiografia antes da cirurgia, e a remoção dos pontos é feita no retorno.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Exodontia de terceiro molar incluso</li><li>Avaliação com radiografia</li><li>Remoção de sutura</li><li>Consulta de retorno</li></ul></div>
+        </article>
+        <article class="card revela">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 4 6 6M4 20l7.5-7.5M16 8l-9 9-3 1 1-3 9-9"/></svg></div>
+          <h3>Extrações e pequenas cirurgias</h3>
+          <p>Extração simples, de dente de leite, frenectomia e drenagem de abscesso.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Exodontia simples</li><li>Exodontia de dente decíduo (de leite)</li><li>Frenectomia (o "freio" da língua ou do lábio)</li><li>Drenagem de abscesso</li></ul></div>
+        </article>
+        <article class="card revela">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Urgência</h3>
+          <p>Dor forte, inchaço ou dente quebrado: chame no WhatsApp e conte o que está sentindo.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Atendimento de urgência</li><li>Drenagem de abscesso</li><li>Restauração provisória</li></ul></div>
+        </article>
+        <article class="card revela">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Restaurações e sensibilidade</h3>
+          <p>Resina na cor do dente e tratamento para dente sensível ao gelado e ao doce.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Restauração em resina composta</li><li>Restauração provisória</li><li>Tratamento de hipersensibilidade dentinária</li></ul></div>
+        </article>
+        <article class="card revela">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Limpeza e prevenção</h3>
+          <p>Avaliação, limpeza, flúor e selante, de crianças e adultos.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Consulta inicial e avaliação</li><li>Profilaxia (limpeza)</li><li>Aplicação tópica de flúor gel</li><li>Aplicação de verniz fluoretado</li><li>Selante de fóssulas e fissuras</li></ul></div>
+        </article>
+        <article class="card revela">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"/></svg></div>
+          <h3>Gengiva</h3>
+          <p>Para gengiva que sangra ou inflama, e a manutenção depois do tratamento.</p>
+          <button class="abre" aria-expanded="false">Ver procedimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="mais"><ul><li>Raspagem e alisamento radicular</li><li>Manutenção periodontal</li></ul></div>
+        </article>
+      </div>
     </section>
 
     <section class="bloco" id="centro-cirurgico">
-      <h2>Por dentro do centro cirúrgico</h2>
-      <p class="galeria-nota">Escovação, paramentação, instrumental separado e equipe alinhada antes de cada procedimento.</p>
-      <div class="galeria">
-        <figure class="larga"><img src="img/instrumental-1110-m.jpg" srcset="img/instrumental-1110-m.jpg 1000w, img/instrumental-1110.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Instrumental cirúrgico organizado sobre a mesa" width="2000" height="1333" loading="lazy"></figure>
-        <figure class="alta"><img src="img/escovacao-1107-m.jpg" srcset="img/escovacao-1107-m.jpg 1000w, img/escovacao-1107.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Escovação das mãos antes da cirurgia" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/preparo-1113-m.jpg" srcset="img/preparo-1113-m.jpg 1000w, img/preparo-1113.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Cirurgião de touca e máscara se preparando" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/paramentacao-1123-m.jpg" srcset="img/paramentacao-1123-m.jpg 1000w, img/paramentacao-1123.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Paramentação com avental estéril" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/equipe-1109-m.jpg" srcset="img/equipe-1109-m.jpg 1000w, img/equipe-1109.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Equipe se paramentando no centro cirúrgico" width="2000" height="1333" loading="lazy"></figure>
-        <figure class="larga"><img src="img/cirurgia-1561-m.jpg" srcset="img/cirurgia-1561-m.jpg 1000w, img/cirurgia-1561.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Equipe em procedimento no centro cirúrgico" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/conversa-1550-m.jpg" srcset="img/conversa-1550-m.jpg 1000w, img/conversa-1550.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Cirurgiões alinhando o procedimento" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/sala-1522-m.jpg" srcset="img/sala-1522-m.jpg 1000w, img/sala-1522.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Sala cirúrgica preparada" width="2000" height="1333" loading="lazy"></figure>
-        <figure><img src="img/cirurgiao-1546-m.jpg" srcset="img/cirurgiao-1546-m.jpg 1000w, img/cirurgiao-1546.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Cirurgião no centro cirúrgico" width="2000" height="1333" loading="lazy"></figure>
+      <div class="cabeca revela">
+        <h2>Por dentro do centro cirúrgico</h2>
+        <p class="sub">Escovação, paramentação, instrumental separado e equipe alinhada antes de cada procedimento. Toque numa foto para ampliar.</p>
+      </div>
+      <div class="galeria revela" id="galeria">
+        <button class="larga"><img src="img/instrumental-1110-m.jpg" srcset="img/instrumental-1110-m.jpg 1000w, img/instrumental-1110.jpg 2000w" sizes="(min-width: 860px) 66vw, 100vw" alt="Instrumental cirúrgico organizado sobre a mesa" width="2000" height="1333" loading="lazy"></button>
+        <button class="alta"><img src="img/escovacao-1107-m.jpg" srcset="img/escovacao-1107-m.jpg 1000w, img/escovacao-1107.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Escovação das mãos antes da cirurgia" width="2000" height="1333" loading="lazy"></button>
+        <button><img src="img/preparo-1113-m.jpg" srcset="img/preparo-1113-m.jpg 1000w, img/preparo-1113.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Cirurgião de touca e máscara se preparando" width="2000" height="1333" loading="lazy"></button>
+        <button><img src="img/paramentacao-1123-m.jpg" srcset="img/paramentacao-1123-m.jpg 1000w, img/paramentacao-1123.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Paramentação com avental estéril" width="2000" height="1333" loading="lazy"></button>
+        <button><img src="img/equipe-1109-m.jpg" srcset="img/equipe-1109-m.jpg 1000w, img/equipe-1109.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Equipe se paramentando no centro cirúrgico" width="2000" height="1333" loading="lazy"></button>
+        <button class="larga"><img src="img/cirurgia-1561-m.jpg" srcset="img/cirurgia-1561-m.jpg 1000w, img/cirurgia-1561.jpg 2000w" sizes="(min-width: 860px) 66vw, 100vw" alt="Equipe em procedimento no centro cirúrgico" width="2000" height="1333" loading="lazy"></button>
+        <button><img src="img/conversa-1550-m.jpg" srcset="img/conversa-1550-m.jpg 1000w, img/conversa-1550.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Cirurgiões alinhando o procedimento" width="2000" height="1333" loading="lazy"></button>
+        <button><img src="img/sala-1522-m.jpg" srcset="img/sala-1522-m.jpg 1000w, img/sala-1522.jpg 2000w" sizes="(min-width: 860px) 33vw, 50vw" alt="Sala cirúrgica preparada" width="2000" height="1333" loading="lazy"></button>
+        <button class="ultima"><img src="img/cirurgiao-1546-m.jpg" srcset="img/cirurgiao-1546-m.jpg 1000w, img/cirurgiao-1546.jpg 2000w" sizes="(min-width: 860px) 33vw, 100vw" alt="Cirurgião no centro cirúrgico" width="2000" height="1333" loading="lazy"></button>
       </div>
     </section>
 
     <section class="bloco" id="sobre">
       <div class="sobre">
-        <img src="img/dupla-1542-m.jpg" srcset="img/dupla-1542-m.jpg 1000w, img/dupla-1542.jpg 2000w" sizes="(min-width: 900px) 50vw, 100vw" alt="Cirurgiões conversando no centro cirúrgico antes do procedimento" width="2000" height="1333" loading="lazy">
-        <div>
+        <div class="sobre-foto revela">
+          <img src="img/dupla-1542-m.jpg" srcset="img/dupla-1542-m.jpg 1000w, img/dupla-1542.jpg 2000w" sizes="(min-width: 900px) 45vw, 100vw" alt="Cirurgiões conversando no centro cirúrgico antes do procedimento" width="2000" height="1333" loading="lazy">
+        </div>
+        <div class="revela">
           <h2>Quem vai cuidar de você</h2>
-          <p>Sou o Dr. Assis Russo, cirurgião-dentista em Brasília. Escolhi a cirurgia porque gosto de resolver o problema de vez, com técnica e com calma.</p>
-          <p>Antes de qualquer procedimento você sabe o que vai ser feito, quanto tempo leva, como é a recuperação e quanto custa.</p>
+          <p class="sub">Sou o Dr. Assis Russo, cirurgião-dentista em Brasília. Escolhi a cirurgia porque gosto de resolver o problema de vez, com técnica e com calma.</p>
+          <p class="sub">Antes de qualquer procedimento você sabe o que vai ser feito, quanto tempo leva, como é a recuperação e quanto custa.</p>
           <dl class="formacao">
-            <div><dt>Formação</dt><dd>Residência em Cirurgia e Traumatologia Bucomaxilofacial no Distrito Federal, pela ACBDF</dd></div>
-            <div><dt>Registro</dt><dd>CRO-DF (número a confirmar)</dd></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><span><dt>Formação</dt><dd>Residência em Cirurgia e Traumatologia Bucomaxilofacial no Distrito Federal, pela ACBDF</dd></span></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h3"/></svg><span><dt>Registro</dt><dd>CRO-DF (número a confirmar)</dd></span></div>
           </dl>
         </div>
       </div>
     </section>
 
     <section class="bloco" id="como-funciona">
-      <h2>Como funciona</h2>
-      <ol class="passos">
-        <li><h3>Você chama no WhatsApp</h3><p>Conta o que está sentindo e marca a avaliação.</p></li>
-        <li><h3>Avaliação e radiografia</h3><p>Vejo a posição de cada siso e explico se precisa tirar e por quê.</p></li>
-        <li><h3>Planejamento</h3><p>Você recebe o plano, o valor e as orientações antes da cirurgia.</p></li>
-        <li><h3>Cirurgia e retorno</h3><p>Procedimento com anestesia e retorno para acompanhar a cicatrização.</p></li>
+      <div class="cabeca revela"><h2>Como funciona</h2></div>
+      <ol class="passos" id="passos">
+        <li><span class="bola">1</span><h3>Você chama no WhatsApp</h3><p>Conta o que está sentindo e marca a avaliação.</p></li>
+        <li><span class="bola">2</span><h3>Avaliação e radiografia</h3><p>Vejo a posição de cada siso e explico se precisa tirar e por quê.</p></li>
+        <li><span class="bola">3</span><h3>Planejamento</h3><p>Você recebe o plano, o valor e as orientações antes da cirurgia.</p></li>
+        <li><span class="bola">4</span><h3>Cirurgia e retorno</h3><p>Procedimento com anestesia e retorno para acompanhar a cicatrização.</p></li>
       </ol>
     </section>
 
     <section class="bloco duvidas" id="duvidas">
-      <h2>Dúvidas comuns</h2>
-      <details><summary>Todo siso precisa ser tirado?</summary><p>Não. Siso bem posicionado, com espaço e fácil de limpar pode ficar. A avaliação com radiografia mostra se o seu precisa sair.</p></details>
-      <details><summary>A cirurgia dói?</summary><p>Durante o procedimento você está anestesiado. Depois, o desconforto é controlado com a medicação e os cuidados que eu passo por escrito.</p></details>
-      <details><summary>Quanto tempo leva a recuperação?</summary><p>Varia com cada caso. Na avaliação eu explico o que esperar nos primeiros dias e quando você volta à rotina.</p></details>
-      <details><summary>Posso tirar os quatro de uma vez?</summary><p>Em muitos casos, sim. Depende da posição dos dentes e da sua saúde geral, e isso é definido no planejamento.</p></details>
-      <details><summary>Atende convênio?</summary><p>O atendimento é particular. Na avaliação você recebe o plano e o valor antes de qualquer procedimento.</p></details>
+      <div class="cabeca revela"><h2>Dúvidas comuns</h2></div>
+      <div class="pergunta"><button aria-expanded="false">Todo siso precisa ser tirado?<span class="mais-menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="resposta"><p>Não. Siso bem posicionado, com espaço e fácil de limpar pode ficar. A avaliação com radiografia mostra se o seu precisa sair.</p></div></div>
+      <div class="pergunta"><button aria-expanded="false">A cirurgia dói?<span class="mais-menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="resposta"><p>Durante o procedimento você está anestesiado. Depois, o desconforto é controlado com a medicação e os cuidados que eu passo por escrito.</p></div></div>
+      <div class="pergunta"><button aria-expanded="false">Quanto tempo leva a recuperação?<span class="mais-menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="resposta"><p>Varia com cada caso. Na avaliação eu explico o que esperar nos primeiros dias e quando você volta à rotina.</p></div></div>
+      <div class="pergunta"><button aria-expanded="false">Posso tirar os quatro de uma vez?<span class="mais-menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="resposta"><p>Em muitos casos, sim. Depende da posição dos dentes e da sua saúde geral, e isso é definido no planejamento.</p></div></div>
+      <div class="pergunta"><button aria-expanded="false">Atende convênio?<span class="mais-menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="resposta"><p>O atendimento é particular. Na avaliação você recebe o plano e o valor antes de qualquer procedimento.</p></div></div>
     </section>
-  </main>
-</div>
+  </div>
+</main>
 
 <section class="contato" id="contato">
   <div class="wrap">
-    <h2>Siso incomodando? Vamos olhar.</h2>
-    <p>Chame no WhatsApp e marque a sua avaliação. O local do atendimento é confirmado no agendamento.</p>
-    <a class="botao" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">Chamar no WhatsApp</a>
-    <dl>
-      <div><dt>WhatsApp</dt><dd>(61) 3199-2265</dd></div>
+    <div class="revela">
+      <h2>Siso incomodando? Vamos olhar.</h2>
+      <p>Chame no WhatsApp e marque a sua avaliação. O local do atendimento é confirmado no agendamento.</p>
+      <a class="botao claro" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">Chamar no WhatsApp <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <dl class="revela">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/556131992265">(61) 3199-2265</a></dd></div>
       <div><dt>Onde atendo</dt><dd>Brasília, DF</dd></div>
       <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/cirurgia.odonto/">@cirurgia.odonto</a></dd></div>
     </dl>
@@ -242,9 +464,136 @@ footer p + p{margin-top:8px}
   </footer>
 </div>
 
-<a class="flutua" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos." aria-label="Chamar no WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
-</a>
+<div class="flutua">
+  <div class="balao" id="balao" role="status"><strong>Dr. Assis Russo</strong>Siso incomodando? Me chama aqui.<button aria-label="Fechar aviso" id="fechaBalao"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <a class="wa" href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos." aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+</div>
 
+<dialog class="lupa" id="lupa" aria-label="Foto ampliada">
+  <img id="lupaImg" alt="">
+  <p id="lupaLegenda"></p>
+  <button class="lupa-btn lupa-ant" id="lupaAnt" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="lupa-btn lupa-prox" id="lupaProx" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <button class="lupa-fecha" id="lupaFecha" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</dialog>
+
+<script>
+(() => {
+  const semMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // topo ganha fundo ao rolar
+  const topo = document.getElementById('topo');
+  const marcaTopo = () => topo.classList.toggle('rolou', scrollY > 12);
+  addEventListener('scroll', marcaTopo, { passive: true }); marcaTopo();
+
+  // revelação dos blocos, uma vez só
+  const observa = new IntersectionObserver((itens) => {
+    itens.forEach((i) => { if (i.isIntersecting) { i.target.classList.add('visto'); observa.unobserve(i.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.revela').forEach((el) => observa.observe(el));
+
+  // arcada: um botão por dente, numeração FDI
+  const posicao = ['', 'Incisivo central', 'Incisivo lateral', 'Canino', 'Primeiro pré-molar', 'Segundo pré-molar', 'Primeiro molar', 'Segundo molar', 'Siso'];
+  const lado = { 1: 'superior direito', 2: 'superior esquerdo', 3: 'inferior esquerdo', 4: 'inferior direito' };
+  const cima = [18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28];
+  const baixo = [48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38];
+  const boca = document.getElementById('boca');
+  const painel = document.getElementById('painel');
+  const linkSiso = painel.querySelector('a').outerHTML;
+  let ativo = null;
+  const mostra = (n, botao) => {
+    const q = Math.floor(n / 10), p = n % 10, siso = p === 8;
+    painel.classList.toggle('siso', siso);
+    painel.innerHTML = '<span class="num">Dente ' + n + '</span><h3>' + posicao[p] + ' ' + lado[q] + '</h3><p>' +
+      (siso ? 'Quando nasce torto, preso no osso ou sem espaço, causa dor, inflamação e empurra os vizinhos. A radiografia mostra se precisa sair.</p>' + linkSiso
+            : 'Na avaliação eu olho este e os outros 31, um por um, e você sai sabendo o que cada um precisa.</p>');
+    if (ativo) ativo.setAttribute('aria-pressed', 'false');
+    ativo = botao; botao.setAttribute('aria-pressed', 'true');
+  };
+  [cima, baixo].forEach((fila, i) => {
+    const linha = document.createElement('div');
+    linha.className = 'fileira' + (i ? ' inferior' : '');
+    fila.forEach((n) => {
+      const b = document.createElement('button');
+      b.className = 'dente' + (n % 10 === 8 ? ' siso' : '') + (n === 11 || n === 41 ? ' meio' : '');
+      b.textContent = n;
+      b.setAttribute('aria-pressed', 'false');
+      b.setAttribute('aria-label', 'Dente ' + n + ', ' + posicao[n % 10] + ' ' + lado[Math.floor(n / 10)]);
+      b.addEventListener('click', () => mostra(n, b));
+      b.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) mostra(n, b); });
+      linha.appendChild(b);
+      if (n === 18) { ativo = b; b.setAttribute('aria-pressed', 'true'); }
+    });
+    boca.appendChild(linha);
+  });
+
+  // cards: luz que segue o cursor e lista que abre
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+    const botao = card.querySelector('.abre'), mais = card.querySelector('.mais');
+    botao.addEventListener('click', () => {
+      const abre = botao.getAttribute('aria-expanded') !== 'true';
+      botao.setAttribute('aria-expanded', abre);
+      botao.firstChild.textContent = abre ? 'Fechar ' : 'Ver procedimentos ';
+      mais.classList.toggle('aberto', abre);
+    });
+  });
+
+  // dúvidas: acordeão com altura animada
+  document.querySelectorAll('.pergunta button').forEach((botao) => {
+    botao.addEventListener('click', () => {
+      const abre = botao.getAttribute('aria-expanded') !== 'true';
+      botao.setAttribute('aria-expanded', abre);
+      botao.nextElementSibling.classList.toggle('aberta', abre);
+    });
+  });
+
+  // como funciona: a linha enche conforme a rolagem
+  const passos = document.getElementById('passos');
+  const itensPasso = [...passos.children];
+  const enche = () => {
+    const r = passos.getBoundingClientRect();
+    const inicio = innerHeight * 0.85, fim = innerHeight * 0.35;
+    const p = Math.min(1, Math.max(0, (inicio - r.top) / (inicio - fim + r.height * 0.4)));
+    passos.style.setProperty('--p', semMovimento ? 1 : p.toFixed(3));
+    itensPasso.forEach((li, i) => li.classList.toggle('feito', semMovimento || p >= i / (itensPasso.length - 1) - 0.02));
+  };
+  addEventListener('scroll', enche, { passive: true }); addEventListener('resize', enche); enche();
+
+  // galeria em tela cheia
+  const fotos = [...document.querySelectorAll('#galeria button')];
+  const lupa = document.getElementById('lupa'), lupaImg = document.getElementById('lupaImg'), legenda = document.getElementById('lupaLegenda');
+  let atual = 0;
+  const abreFoto = (i) => {
+    atual = (i + fotos.length) % fotos.length;
+    const img = fotos[atual].querySelector('img');
+    lupaImg.src = img.currentSrc.replace('-m.jpg', '.jpg');
+    lupaImg.alt = img.alt; legenda.textContent = img.alt + ' · ' + (atual + 1) + ' de ' + fotos.length;
+    if (!lupa.open) lupa.showModal();
+  };
+  fotos.forEach((b, i) => b.addEventListener('click', () => abreFoto(i)));
+  document.getElementById('lupaAnt').addEventListener('click', () => abreFoto(atual - 1));
+  document.getElementById('lupaProx').addEventListener('click', () => abreFoto(atual + 1));
+  document.getElementById('lupaFecha').addEventListener('click', () => lupa.close());
+  lupa.addEventListener('click', (e) => { if (e.target === lupa) lupa.close(); });
+  lupa.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') abreFoto(atual - 1); if (e.key === 'ArrowRight') abreFoto(atual + 1); });
+
+  // balão do WhatsApp aparece depois de alguns segundos
+  const balao = document.getElementById('balao');
+  let fechado = false;
+  try { fechado = sessionStorage.getItem('balaoFechado') === '1'; } catch (e) {}
+  if (!fechado) setTimeout(() => balao.classList.add('mostra'), 4500);
+  document.getElementById('fechaBalao').addEventListener('click', () => {
+    balao.classList.remove('mostra');
+    try { sessionStorage.setItem('balaoFechado', '1'); } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
