@@ -295,6 +295,47 @@ footer p + p{margin-top:8px}
 .revela.visto{opacity:1;transform:none}
 html:not(.js) .revela{opacity:1;transform:none}
 
+/* arcada interativa */
+.arcada{display:grid;gap:36px;background:var(--papel);border:1px solid var(--linha);border-radius:32px;padding:32px 20px;box-shadow:var(--sombra)}
+.arcada .cabeca{margin-bottom:24px}
+.arcada .cabeca h2{font-size:clamp(36px,4.4vw,58px)}
+.painel{min-height:178px;border-radius:20px;background:var(--marfim);padding:22px 24px;transition:background .45s var(--ease),color .45s}
+.painel .num{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-escuro)}
+.painel h3{font-size:30px;margin:6px 0 8px}
+.painel p{font-size:15.5px;color:var(--cinza)}
+.painel.troca > *{animation:painelEntra .45s var(--ease-out) both}
+.painel.troca > :nth-child(2){animation-delay:.04s}.painel.troca > :nth-child(3){animation-delay:.08s}
+@keyframes painelEntra{from{opacity:0;transform:translateY(8px)}}
+.painel.siso{background:var(--noite);color:var(--luz)}
+.painel.siso p{color:var(--luz-2)}
+.painel.siso .num{color:var(--ouro)}
+.painel a{display:inline-block;margin-top:14px;padding:4px 0;font-weight:600;font-size:15px;color:var(--ouro-escuro);text-decoration:none;border-bottom:1.5px solid currentColor}
+.painel.siso a{color:var(--ouro)}
+.boca-moldura{display:grid;gap:14px;align-content:center}
+.boca{display:grid;gap:14px}
+.fileira{display:grid;grid-template-columns:repeat(16,1fr);gap:5px;font-variant-numeric:tabular-nums}
+.dente{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;min-height:44px;font-size:clamp(11px,1.3vw,15px);font-weight:600;color:#8a8f99;background:var(--marfim);border:1px solid var(--linha);border-radius:42% 42% 48% 48%/34% 34% 62% 62%;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s,box-shadow .3s;opacity:0;transform:translateY(-10px)}
+.inferior .dente{border-radius:48% 48% 42% 42%/62% 62% 34% 34%;transform:translateY(10px)}
+.arcada.visto .dente{opacity:1;transform:none;transition-delay:calc(var(--i) * 22ms)}
+.dente.meio{margin-right:8px}
+.dente:hover,.dente:focus-visible{transform:translateY(-4px) !important;border-color:var(--tinta);color:var(--tinta);transition-delay:0s !important}
+.inferior .dente:hover,.inferior .dente:focus-visible{transform:translateY(4px) !important}
+.dente.siso{background:var(--noite);border-color:var(--noite);color:var(--ouro-claro)}
+.dente.siso::after{content:"";position:absolute;inset:-5px;border-radius:inherit;border:1.5px dashed var(--ouro);opacity:.7;animation:giraSiso 9s linear infinite}
+@keyframes giraSiso{to{transform:rotate(360deg)}}
+.dente[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ouro);border-color:var(--ouro)}
+.dica{display:flex;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinza)}
+.dica span:nth-child(2){text-align:center}
+.dica span:last-child{text-align:right}
+@media(max-width:599px){
+  .boca{gap:22px}
+  .fileira{grid-template-columns:repeat(8,1fr);gap:7px}
+  .dente{font-size:14px}
+  .dente.meio{margin-right:0}
+  .dica span:nth-child(2){display:none}
+}
+@media(min-width:960px){.arcada{grid-template-columns:1fr 400px;align-items:end;padding:56px;gap:44px 56px}.arcada-texto{grid-column:1;grid-row:1}.painel{grid-column:2;grid-row:1;min-height:220px}.boca-moldura{grid-column:1 / -1;grid-row:2}.arcada .cabeca{margin-bottom:0}.fileira{gap:8px}.dente{font-size:17px}.dente.meio{margin-right:14px}.boca{gap:18px}}
+
 /* você sabia: cartões que viram */
 .fatos{display:grid;gap:14px}
 .fato{position:relative;display:block;width:100%;min-height:300px;perspective:1200px;text-align:left;border-radius:22px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease)}
@@ -357,6 +398,8 @@ html:not(.js) .revela{opacity:1;transform:none}
   .pal > span{transform:none}
   .galeria button{clip-path:none}
   .fato{transform:none}
+  .dente{opacity:1;transform:none}
+  .dente.siso::after{animation:none}
 }
 </style>
 </head>
@@ -371,6 +414,7 @@ html:not(.js) .revela{opacity:1;transform:none}
     </a>
     <nav aria-label="Seções">
       <a href="#jornada">A cirurgia</a>
+      <a href="#arcada">Os dentes</a>
       <a href="#sobre">Sobre</a>
       <a href="#tratamentos">Tratamentos</a>
       <a href="#duvidas">Dúvidas</a>
@@ -472,6 +516,28 @@ html:not(.js) .revela{opacity:1;transform:none}
       <div><b>Um paciente <i>por vez.</i></b><p>Atendimento individual e particular, sem consulta corrida.</p></div>
       <div><b>Do simples <i>ao complexo.</i></b><p>Do siso que já nasceu ao incluso perto do nervo, com tomografia quando precisa.</p></div>
     </div>
+
+    <section class="bloco" id="arcada">
+      <div class="arcada revela">
+        <div class="arcada-texto">
+          <div class="cabeca">
+            <p class="rotulo">Os 32 dentes</p>
+            <h2>Cada dente <em>tem um número.</em></h2>
+            <p class="sub">É assim que ele aparece no prontuário e na radiografia. Os sisos são o 18, o 28, o 38 e o 48. Passe o mouse ou toque em qualquer dente.</p>
+          </div>
+        </div>
+        <div class="boca-moldura">
+          <div class="boca" id="boca" role="group" aria-label="Arcada dentária: 32 dentes numerados"></div>
+          <p class="dica"><span>Direita do paciente</span><span>Em cima, os dentes de cima</span><span>Esquerda do paciente</span></p>
+        </div>
+        <div class="painel siso" id="painel" aria-live="polite">
+          <span class="num">Dente 18</span>
+          <h3>Siso superior direito</h3>
+          <p>Quando nasce torto, preso no osso ou sem espaço, causa dor, inflamação e empurra os vizinhos. A radiografia mostra se precisa sair.</p>
+          <a href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20avaliar%20meus%20sisos.">Avaliar meus sisos</a>
+        </div>
+      </div>
+    </section>
 
     <section class="bloco" id="voce-sabia">
       <div class="cabeca revela">
@@ -784,6 +850,57 @@ html:not(.js) .revela{opacity:1;transform:none}
     b.appendChild(o);
     setTimeout(() => o.remove(), 700);
   }));
+
+  // arcada: um botão por dente, numeração FDI, explicação de cada um
+  const boca = document.getElementById('boca');
+  if (boca) {
+    const posicao = ['', 'Incisivo central', 'Incisivo lateral', 'Canino', 'Primeiro pré-molar', 'Segundo pré-molar', 'Primeiro molar', 'Segundo molar', 'Siso'];
+    const lado = { 1: 'superior direito', 2: 'superior esquerdo', 3: 'inferior esquerdo', 4: 'inferior direito' };
+    const sobre = {
+      1: 'Corta os alimentos e é o dente mais visível do sorriso.',
+      2: 'Ajuda a cortar e completa o desenho do sorriso, ao lado do central.',
+      3: 'Tem a raiz mais longa da boca. Rasga os alimentos e guia a mordida quando você move a mandíbula para o lado.',
+      4: 'Começa a triturar. É o dente que às vezes sai para abrir espaço no tratamento ortodôntico.',
+      5: 'Faz a passagem entre o corte da frente e a mastigação pesada do fundo.',
+      6: 'O principal dente da mastigação. Nasce por volta dos 6 anos e é permanente: cuidar dele é cuidar da mordida inteira.',
+      7: 'Mastigação pesada. É o vizinho do siso, e o que mais sofre quando o siso nasce encostado nele.',
+      8: 'Quando nasce torto, preso no osso ou sem espaço, causa dor, inflamação e empurra os vizinhos. A radiografia mostra se precisa sair.'
+    };
+    const painel = document.getElementById('painel');
+    const linkSiso = painel.querySelector('a').outerHTML;
+    const linkAval = '<a href="https://wa.me/556131992265?text=Ol%C3%A1%2C%20Dr.%20Assis!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o.">Agendar uma avaliação</a>';
+    let ativo = null;
+    const mostra = (n, botao) => {
+      if (botao === ativo) return;
+      const q = Math.floor(n / 10), p = n % 10, siso = p === 8;
+      painel.classList.toggle('siso', siso);
+      painel.innerHTML = '<span class="num">Dente ' + n + ' · ' + (q <= 2 ? 'arcada de cima' : 'arcada de baixo') + '</span><h3>' + posicao[p] + ' ' + lado[q] + '</h3><p>' + sobre[p] + '</p>' + (siso ? linkSiso : linkAval);
+      painel.classList.remove('troca'); void painel.offsetWidth; painel.classList.add('troca');
+      if (ativo) ativo.setAttribute('aria-pressed', 'false');
+      ativo = botao; botao.setAttribute('aria-pressed', 'true');
+    };
+    const cima = [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28];
+    const baixo = [48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38];
+    let k = 0;
+    [cima, baixo].forEach((fila, i) => {
+      const linha = document.createElement('div');
+      linha.className = 'fileira' + (i ? ' inferior' : '');
+      fila.forEach((n) => {
+        const b = document.createElement('button');
+        b.className = 'dente' + (n % 10 === 8 ? ' siso' : '') + (n === 11 || n === 41 ? ' meio' : '');
+        b.textContent = n;
+        b.style.setProperty('--i', k++);
+        b.setAttribute('aria-pressed', n === 18 ? 'true' : 'false');
+        b.setAttribute('aria-label', 'Dente ' + n + ', ' + posicao[n % 10] + ' ' + lado[Math.floor(n / 10)]);
+        b.addEventListener('click', () => mostra(n, b));
+        b.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) mostra(n, b); });
+        b.addEventListener('focus', () => mostra(n, b));
+        if (n === 18) ativo = b;
+        linha.appendChild(b);
+      });
+      boca.appendChild(linha);
+    });
+  }
 
   // você sabia: vira o cartão
   document.querySelectorAll('.fato').forEach((f) => f.addEventListener('click', () => f.setAttribute('aria-pressed', f.getAttribute('aria-pressed') !== 'true')));
