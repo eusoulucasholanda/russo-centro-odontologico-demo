@@ -568,7 +568,7 @@ html:not(.js) .revela{opacity:1;transform:none}
     <section class="bloco" id="sobre">
       <div class="sobre">
         <figure class="sobre-foto revela">
-          <img src="img/preparo-1113-m.jpg" srcset="img/preparo-1113-m.jpg 1000w, img/preparo-1113.jpg 2000w" sizes="(min-width: 900px) 45vw, 100vw" alt="Dr. Assis Russo de touca e máscara, se preparando para a cirurgia" width="2000" height="1333" loading="lazy" style="object-position:70% 35%">
+          <img src="img/assis-jaleco-m.jpg" srcset="img/assis-jaleco-m.jpg 700w, img/assis-jaleco.jpg 1066w" sizes="(min-width: 900px) 45vw, 100vw" alt="Dr. Assis Russo de jaleco" width="1066" height="1600" loading="lazy" style="object-position:50% 18%">
           <figcaption><b>Dr. Assis Russo</b><span>Cirurgião-dentista</span></figcaption>
         </figure>
         <div class="revela">
@@ -825,12 +825,14 @@ html:not(.js) .revela{opacity:1;transform:none}
       b.addEventListener('pointerleave', () => { b.style.setProperty('--tx', '0px'); b.style.setProperty('--ty', '0px'); });
     });
     const palco = document.querySelector('.palco');
-    palco.addEventListener('pointermove', (e) => {
-      palco.style.setProperty('--lx', e.clientX + 'px');
-      palco.style.setProperty('--ly', e.clientY + 'px');
-      palco.style.setProperty('--luz-on', 1);
-    });
-    palco.addEventListener('pointerleave', () => palco.style.setProperty('--luz-on', 0));
+    if (palco) {
+      palco.addEventListener('pointermove', (e) => {
+        palco.style.setProperty('--lx', e.clientX + 'px');
+        palco.style.setProperty('--ly', e.clientY + 'px');
+        palco.style.setProperty('--luz-on', 1);
+      });
+      palco.addEventListener('pointerleave', () => palco.style.setProperty('--luz-on', 0));
+    }
     document.querySelectorAll('.fato').forEach((f) => {
       f.addEventListener('pointermove', (e) => {
         const r = f.getBoundingClientRect();
